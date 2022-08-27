@@ -1,5 +1,6 @@
 import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from './Pages/Login/Login';
 
 function App() {
 
@@ -10,7 +11,7 @@ function App() {
                 {/* home */}
                 <Route />
                 {/* login */}
-                <Route />
+                <Route path="login" element={<Login />}/>
                 {/* cadastro */}
                 <Route />
                 {/* cardapio */}
