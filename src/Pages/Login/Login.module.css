@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.containerBg {
+  width: 40%;
+}
+
+.containerLogin {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  text-align: center;
+  align-items: center;
+}
