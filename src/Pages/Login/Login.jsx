@@ -1,11 +1,59 @@
-import React from 'react'
+import React from "react";
+import {
+  Button,
+  TextField,
+  CardContent,
+  CardActions,
+  Card,
+  Container,
+} from "@mui/material";
+
+import S from "./Login.module.css";
+import bg from "../../assets/images/hamburguerLogin.svg";
 
 const Login = () => {
   return (
-    <div>
-        <h2>Login</h2>
+    <div className={S.container}>
+      <div className={S.containerLogin}>
+        <Card sx={{ maxWidth: 400 }}>
+          <CardContent>
+            <h2>Login</h2>
+            <form>
+              <TextField
+                id="email"
+                required
+                label="Email"
+                variant="outlined"
+                type="text"
+                fullWidth
+                margin="normal"
+              />
+              <TextField
+                id="password"
+                required
+                label="Senha:"
+                variant="outlined"
+                type="password"
+                fullWidth
+                margin="normal"
+              />
+            </form>
+          </CardContent>
+          <CardActions>
+            <Button color="primary" variant="contained">
+              Entrar
+            </Button>
+            <Button size="small" color="primary">
+              Esqueci meu email / senha
+            </Button>
+          </CardActions>
+        </Card>
+      </div>
+      <div className={S.containerBg}>
+        <img src={bg} alt="ícones de hambúrgueres" />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
