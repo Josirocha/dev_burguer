@@ -13,10 +13,9 @@ import bg from "../../assets/images/hamburguerLogin.svg";
 import { useEffect } from "react";
 
 const Login = () => {
-
   useEffect(() => {
-    localStorage.clear('token')
-  }, [])
+    localStorage.clear("token");
+  }, []);
 
   return (
     <div className={S.container}>
@@ -56,7 +55,10 @@ const Login = () => {
         </Card>
       </div>
       <div className={S.containerBg}>
-        <img src={bg} alt="ícones de hambúrgueres" />
+        <img
+          src={bg}
+          alt="animação suave na vertical de duas mãos segurando um hambúrguer"
+        />
       </div>
     </div>
   );
