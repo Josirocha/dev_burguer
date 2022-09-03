@@ -2,16 +2,17 @@ import React from "react";
 import Login from "./Pages/Login/Login";
 import { BrowserRouter, Routes as Switch, Route } from "react-router-dom";
 import Header from "./Components/Common/Header/Header";
-import { createTheme, ThemeProvider } from '@mui/material';
+import { createTheme, ThemeProvider } from "@mui/material";
 import Cardapio from "./Pages/Cardapio/Cardapio";
+import SobreNos from "./Pages/SobreNos/SobreNos";
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#004643'
+      main: "#004643",
     },
     secondary: {
-      main: '#ffffff'
+      main: "#ffffff",
     },
   },
 });
@@ -24,6 +25,7 @@ const Routes = () => {
         <Switch>
           {/* home */}
           <Route />
+          <Route path="sobre" exact element={<SobreNos />} />
           {/* login */}
           <Route path="login" exact element={<Login />} />
           {/* cadastro */}
