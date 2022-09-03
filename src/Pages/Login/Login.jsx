@@ -10,8 +10,14 @@ import {
 
 import S from "./Login.module.css";
 import bg from "../../assets/images/hamburguerLogin.svg";
+import { useEffect } from "react";
 
 const Login = () => {
+
+  useEffect(() => {
+    localStorage.clear('token')
+  }, [])
+
   return (
     <div className={S.container}>
       <div className={S.containerLogin}>
