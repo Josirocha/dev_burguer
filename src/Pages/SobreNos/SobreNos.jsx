@@ -1,23 +1,46 @@
 import React from "react";
 import Box from "@mui/material/Box";
-
+import PersonCard from "../../Components/PersonCard/PersonCard";
+import alonso from "../../assets/images/alonso.jpg";
+import jiu from "../../assets/images/jiulie.jpg";
+import josi from "../../assets/images/josi.jpg";
+import will from "../../assets/images/will.jpg";
 import S from "./SobreNos.module.css";
 
 const SobreNos = () => {
   return (
     <>
-      <h3 className={S.title}>Conheça nossos burguer developers:</h3>
+      <h2 className={S.title}>Conheça nossos burguer developers:</h2>
       <Box
         sx={{
-          width: 300,
-          height: 300,
-          backgroundColor: "primary",
-          "&:hover": {
-            backgroundColor: "secondary",
-            opacity: [0.9, 0.8, 0.7],
-          },
+          py: 2,
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          gap: 3,
         }}
-      />
+      >
+        <PersonCard
+          img={alonso}
+          name={"Alonso Estevam"}
+          description={"Fã de pastel"}
+        />
+        <PersonCard
+          img={jiu}
+          name={"Jiulie Vitória"}
+          description={"Franja retinha"}
+        />
+        <PersonCard
+          img={will}
+          name={"Willian Carvalho"}
+          description={"Irmão gêmeo"}
+        />
+        <PersonCard
+          img={josi}
+          name={"Josiane Rocha"}
+          description={"Salvadora de api"}
+        />
+      </Box>
     </>
   );
 };
