@@ -31,14 +31,14 @@ const SobreNos = () => {
           description={"Franja retinha"}
         />
         <PersonCard
-          img={will}
-          name={"Willian Carvalho"}
-          description={"Irmão gêmeo"}
-        />
-        <PersonCard
           img={josi}
           name={"Josiane Rocha"}
           description={"Salvadora de api"}
+        />
+        <PersonCard
+          img={will}
+          name={"Willian Carvalho"}
+          description={"Irmão gêmeo"}
         />
       </Box>
     </>

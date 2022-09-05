@@ -16,4 +16,12 @@
   align-items: center;
 }
 
-/* @media () */
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+  .containerLogin {
+    margin-top: 60px;
+    width: 100%;
+  }
+}
