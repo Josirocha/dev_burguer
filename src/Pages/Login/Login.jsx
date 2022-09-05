@@ -20,7 +20,7 @@ const Login = () => {
   return (
     <div className={S.container}>
       <div className={S.containerLogin}>
-        <Card sx={{ maxWidth: 400 }}>
+        <Card sx={{ maxWidth: 400, height: 450 }}>
           <CardContent>
             <h2>Login</h2>
             <form>
@@ -44,12 +44,33 @@ const Login = () => {
               />
             </form>
           </CardContent>
-          <CardActions>
-            <Button color="primary" variant="contained">
+          <CardActions
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              paddingLeft: 2,
+              paddingRight: 2,
+            }}
+          >
+            <Button
+              color="primary"
+              variant="contained"
+              fullWidth
+              sx={{ marginBottom: 2 }}
+            >
               Entrar
             </Button>
-            <Button size="small" color="primary">
+            <Button size="small" color="primary" sx={{ marginBottom: 2 }}>
               Esqueci meu email / senha
+            </Button>
+            <h4>Ainda não tem conta com a gente?</h4>
+            <Button
+              color="primary"
+              variant="outlined"
+              fullWidth
+              sx={{ marginTop: 2 }}
+            >
+              Cadastre-se aqui!
             </Button>
           </CardActions>
         </Card>
