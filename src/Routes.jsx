@@ -1,5 +1,6 @@
 import React from "react";
 import Login from "./Pages/Login/Login";
+import Cadastro from "./Pages/Cadastro/Cadastro";
 import { BrowserRouter, Routes as Switch, Route } from "react-router-dom";
 
 const Routes = () => {
@@ -11,7 +12,7 @@ const Routes = () => {
         {/* login */}
         <Route path="login" element={<Login />} />
         {/* cadastro */}
-        <Route />
+        <Route path="cadastro" element={<Cadastro />}/>
         {/* cardapio */}
         <Route />
       </Switch>
