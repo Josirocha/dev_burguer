@@ -57,6 +57,7 @@ const Login = () => {
               variant="contained"
               fullWidth
               sx={{ marginBottom: 2 }}
+              size="large"
             >
               Entrar
             </Button>
@@ -68,6 +69,7 @@ const Login = () => {
               color="primary"
               variant="outlined"
               fullWidth
+              size="large"
               sx={{ marginTop: 2 }}
             >
               Cadastre-se aqui!
