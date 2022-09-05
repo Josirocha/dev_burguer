@@ -1,5 +1,6 @@
 import React from "react";
 import Login from "./Pages/Login/Login";
+import Cadastro from "./Pages/Cadastro/Cadastro";
 import { BrowserRouter, Routes as Switch, Route } from "react-router-dom";
 import Header from "./Components/Common/Header/Header";
 import { createTheme, ThemeProvider } from "@mui/material";
@@ -20,6 +21,7 @@ const theme = createTheme({
 
 const Routes = () => {
   return (
+
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <Header />
