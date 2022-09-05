@@ -11,11 +11,14 @@ import {
 import S from "./Login.module.css";
 import bg from "../../assets/images/hamburguerLogin.svg";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   useEffect(() => {
     localStorage.clear("token");
   }, []);
+
+  const navigate = useNavigate();
 
   return (
     <div className={S.container}>
@@ -71,6 +74,7 @@ const Login = () => {
               fullWidth
               size="large"
               sx={{ marginTop: 2 }}
+              onClick={() => navigate("/cadastro")}
             >
               Cadastre-se aqui!
             </Button>
