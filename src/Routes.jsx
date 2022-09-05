@@ -5,6 +5,7 @@ import Header from "./Components/Common/Header/Header";
 import { createTheme, ThemeProvider } from "@mui/material";
 import Cardapio from "./Pages/Cardapio/Cardapio";
 import SobreNos from "./Pages/SobreNos/SobreNos";
+import Cadastro from "./Pages/Cadastro/Cadastro";
 
 const theme = createTheme({
   palette: {
@@ -29,7 +30,7 @@ const Routes = () => {
           {/* login */}
           <Route path="login" exact element={<Login />} />
           {/* cadastro */}
-          <Route />
+          <Route path="cadastro" exact element={<Cadastro />} />
           {/* cardapio */}
           <Route path="cardapio" exact element={<Cardapio />} />
         </Switch>
