@@ -14,8 +14,14 @@ const theme = createTheme({
     },
     secondary: {
       main: "#ffffff",
-    },
+    }
   },
+  typography: {
+    fontFamily: [
+      'Mulish,sans-serif',
+    ]
+
+  }
 });
 
 const Routes = () => {
