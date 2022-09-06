@@ -4,12 +4,8 @@ import Header from "./Components/Common/Header/Header";
 import { createTheme, ThemeProvider } from "@mui/material";
 import Cardapio from "./Pages/Cardapio/Cardapio";
 import SobreNos from "./Pages/SobreNos/SobreNos";
-<<<<<<< HEAD
 import Login from "./Pages/Login/Login";
 import Cadastro from "./Pages/Cadastro/Cadastro";
-=======
-
->>>>>>> f5d0143 (alterei a rota cadastro)
 
 const theme = createTheme({
     palette: {
