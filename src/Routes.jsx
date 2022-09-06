@@ -7,7 +7,6 @@ import { createTheme, ThemeProvider } from "@mui/material";
 import Cardapio from "./Pages/Cardapio/Cardapio";
 import SobreNos from "./Pages/SobreNos/SobreNos";
 
-
 const theme = createTheme({
   palette: {
     primary: {
@@ -21,7 +20,6 @@ const theme = createTheme({
 
 const Routes = () => {
   return (
-
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <Header />
