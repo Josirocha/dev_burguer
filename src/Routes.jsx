@@ -6,7 +6,7 @@ import Header from "./Components/Common/Header/Header";
 import { createTheme, ThemeProvider } from "@mui/material";
 import Cardapio from "./Pages/Cardapio/Cardapio";
 import SobreNos from "./Pages/SobreNos/SobreNos";
-import Cadastro from "./Pages/Cadastro/Cadastro";
+
 
 const theme = createTheme({
   palette: {
