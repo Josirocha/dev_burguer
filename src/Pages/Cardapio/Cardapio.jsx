@@ -1,8 +1,20 @@
 import { Box } from "@mui/material";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import CardCardapio from "../../Components/CardCardapio/CardCardapio";
+import { getProdutos } from "../../services/api.js";
 
 const Cardapio = () => {
+    const [produtos, setProdutos] = useState([]);
+
+    async function requisicao() {
+        const response = await getProdutos();
+        setProdutos(response);
+    }
+
+    useEffect(() => {
+        requisicao();
+    }, []);
+
     return (
         <Box
             sx={{
@@ -13,19 +25,16 @@ const Cardapio = () => {
                 padding: "80px 16px",
             }}
         >
-            <CardCardapio
-                name={"Java Burguer"}
-                ingredientes={
-                    "5 carnes, 4 ovos, alface, muito bacon, calabresa, tomate, milho, ervilha, cheddar"
-                }
-            />
-
-            <CardCardapio
-                name={"Java Burguer"}
-                ingredientes={
-                    "5 carnes, 4 ovos, alface, muito bacon, calabresa, tomate, milho, ervilha, cheddar"
-                }
-            />
+            {produtos.map((item, index) => {
+                return (
+                    <CardCardapio
+                        key={index}
+                        img={item.url}
+                        name={item.nome} 
+                        ingredientes={item.ingredientes}
+                        valor={item.preço}/>
+                );
+            })}
         </Box>
     );
 };
