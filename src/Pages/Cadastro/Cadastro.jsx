@@ -5,28 +5,39 @@ import {
     CardActions,
     CardContent,
     TextField,
+    FormControlLabel,
+    FormControl,
+    Radio,
+    FormLabel,
+    RadioGroup,
 } from "@mui/material";
 import img from "../../assets/images/cadastro.svg";
-import S from './Cadastro.module.css'
+import S from "./Cadastro.module.css";
 function Cadastro() {
     return (
         <div className={S.container}>
-                <h2>Cadastre-se aqui</h2>
             <div className={S.form}>
                 <Card
                     sx={{
-                        width: "280",
+                        width: "350",
                         height: "80",
-                        padding: "100px 16px",
+                        padding: "10px 16px",
                         margin: "16px",
-                        marginTop: "20px",
+                        marginTop: "90px",
                         display: "flex",
                         flexDirection: "column",
                     }}
                 >
                     <CardContent
-                        sx={{ display: "flex", flexDirection: "column" }}
+
+                        sx={{
+                            display: "flex",
+                            flexDirection: "column",
+                            width: "300",
+                            height: "800",
+                        }}
                     >
+                        <h2 className={S.titulo}>Cadastre-se aqui</h2>
                         <TextField
                             id="Nome"
                             label="Nome"
@@ -75,7 +86,26 @@ function Cadastro() {
                             fullWidth
                             margin="normal"
                         />
+                        <TextField
+                            id="validaSenha"
+                            label="Confirme sua senha"
+                            variant="outlined"
+                            type="password"
+                            fullWidth
+                            margin="normal"
+                        />
                         <CardActions>
+                            <FormControl>
+                                <RadioGroup
+                                    aria-labelledby="demo-controlled-radio-buttons-group"
+                                    name="controlled-radio-buttons-group"
+                                >
+                                    <FormControlLabel
+                                        control={<Radio />}
+                                        label="Aceito os termos de uso e politica de privacidade"
+                                    />
+                                </RadioGroup>
+                            </FormControl>
                             <Button variant="contained">Cadastrar</Button>
                         </CardActions>
                     </CardContent>

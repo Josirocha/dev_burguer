@@ -1,6 +1,7 @@
-/* .container{
+.container{
     display: flex;
-} */
+    justify-content: space-around;
+}
 
 .form{
     display: flex;
@@ -8,5 +9,10 @@
 }
 
 .svg{
-    
+    width: 40%;
+    margin-top: 30px;
+}
+
+.titulo{
+    text-align: center;
 }
