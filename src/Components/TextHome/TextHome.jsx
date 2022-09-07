@@ -2,7 +2,7 @@ import React from "react";
 import style from "./TextHome.module.css";
 import bg from "../../assets/images/hamburger-animate.svg";
 import { Stack, Button } from "@mui/material";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const TextHome = () => {
     return (
@@ -37,18 +37,13 @@ const TextHome = () => {
                 direction="row"
                 className={style.containerButtons}
             >
-                <Link to="/Cadastro" style={{border: 'none'}}>
-                    <Button variant="contained"  className={style.cadastro} >
-                        Cadastre-se
-                    </Button>
+                <Link to="/Cadastro" style={{ border: "none" }}>
+                    <Button variant="contained">Cadastre-se</Button>
                 </Link>
-                <Link to="/Login" style={{border: 'none'}}>
-                    <Button variant="outlined" className={style.entrar}>
-                        Entrar
-                    </Button>
+                <Link to="/Login" style={{ border: "none" }}>
+                    <Button variant="outlined">Entrar</Button>
                 </Link>
             </Stack>
-            <div className={style.containerDois}></div>
         </>
     );
 };
