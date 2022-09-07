@@ -1,11 +1,12 @@
+/* .container{
+    display: flex;
+} */
+
 .form{
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-content: center;
-    width: 30%;
-    border: solid white;
-    background-color: white;
-    padding: 15px;
-    margin-top: 150px;
+}
+
+.svg{
+    
 }
