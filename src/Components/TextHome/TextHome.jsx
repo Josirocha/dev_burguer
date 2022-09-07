@@ -1,6 +1,8 @@
 import React from "react";
 import style from "./TextHome.module.css";
 import bg from "../../assets/images/hamburger-animate.svg";
+import { Stack, Button } from "@mui/material";
+import { Link } from 'react-router-dom';
 
 const TextHome = () => {
     return (
@@ -15,7 +17,11 @@ const TextHome = () => {
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Quia eum quae quod, eius ad saepe quasi obcaecati
                         exercitationem error? Culpa rem aut libero fugiat id.
-                        Animi reiciendis eaque omnis porro.
+                        Animi reiciendis eaque omnis porro. Lorem ipsum dolor
+                        sit amet, consectetur adipisicing elit. Veritatis beatae
+                        facilis ullam incidunt minima quam sint aliquam
+                        repudiandae, inventore recusandae. Voluptatem, quasi
+                        sunt! Tenetur nisi officiis, facilis unde officia eos?
                     </p>
                 </div>
                 <div className={style.containerBg}>
@@ -26,6 +32,23 @@ const TextHome = () => {
                     />
                 </div>
             </div>
+            <Stack
+                spacing={2}
+                direction="row"
+                className={style.containerButtons}
+            >
+                <Link to="/Cadastro" style={{border: 'none'}}>
+                    <Button variant="contained"  className={style.cadastro} >
+                        Cadastre-se
+                    </Button>
+                </Link>
+                <Link to="/Login" style={{border: 'none'}}>
+                    <Button variant="outlined" className={style.entrar}>
+                        Entrar
+                    </Button>
+                </Link>
+            </Stack>
+            <div className={style.containerDois}></div>
         </>
     );
 };

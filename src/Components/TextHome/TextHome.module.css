@@ -28,3 +28,20 @@
 .imagem {
     width: 70%;
 }
+
+.containerButtons {
+    margin-left: 65px;
+}
+
+.Link {
+    border: none;
+}
+.containerDois {
+    margin-top: 20px;
+    background-color: #abd1c6;
+}
+
+a {
+    text-decoration: none;
+}
+
