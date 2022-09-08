@@ -1,6 +1,6 @@
 import React from "react";
 import SearchIcon from "@mui/icons-material/Search";
-import { TextField, Grid, InputAdornment } from "@mui/material";
+import { TextField, InputAdornment } from "@mui/material";
 import { styled } from "@mui/system";
 
 const StyledMuiTextField = styled(TextField)`
@@ -12,23 +12,20 @@ const StyledMuiTextField = styled(TextField)`
 
 const Search = () => {
     return (
-        <Grid container justifyContent="center">
-            <Grid xs={12} md={6}>
-                <StyledMuiTextField
-                    fullWidth
-                    color="primary"
-                    focused
-                    placeholder="Pesquise aqui"
-                    InputProps={{
-                        endAdornment: (
-                            <InputAdornment position="start">
-                                <SearchIcon />
-                            </InputAdornment>
-                        ),
-                    }}
-                />
-            </Grid>
-        </Grid>
+        <StyledMuiTextField
+            fullWidth
+            color="primary"
+            size="small"
+            focused
+            placeholder="Pesquise aqui"
+            InputProps={{
+                endAdornment: (
+                    <InputAdornment position="start">
+                        <SearchIcon />
+                    </InputAdornment>
+                ),
+            }}
+        />
     );
 };
 
