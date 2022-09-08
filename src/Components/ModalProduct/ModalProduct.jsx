@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import React, { useState } from "react";
 
-const ModalProduct = ({ open, onClose, values, title, id }) => {
+const ModalProduct = ({ open, onClose, values, id }) => {
     const [nome, setNome] = useState(values?.nome);
     const [ingredientes, setIngredientes] = useState(values?.ingredientes);
     const [url, setUrl] = useState(values?.url);
@@ -51,7 +51,7 @@ const ModalProduct = ({ open, onClose, values, title, id }) => {
                         component="div"
                         mb={3}
                     >
-                        {title}
+                    {values ? "Atualizar Produto" : "Cadastrar Produto"}
                     </Typography>
                     <Box
                         sx={{

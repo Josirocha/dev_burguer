@@ -5,11 +5,13 @@ import { getProdutos } from "../../services/api.js";
 import Search from "../../Components/Search/Search";
 import CreateProduct from "../../Components/CreateProduct/CreateProduct";
 import ModalDelete from "../../Components/ModalDelete/ModalDelete";
+import ModalProduct from "../../Components/ModalProduct/ModalProduct";
 
 const Cardapio = () => {
     const [produtos, setProdutos] = useState([]);
     const [produtosFiltrados, setProdutosFiltrados] = useState([]);
     const [isModalDeleteOpen, setIsModalDeleteOpen] = useState(false);
+    const [isModalProductOpen, setIsModalProductOpen] = useState(false);
     const [activeId, setActiveId] = useState();
 
     async function requisicao() {
@@ -59,7 +61,7 @@ const Cardapio = () => {
                             <Search onChange={handleSearch} />
                         </Grid>
 
-                        <CreateProduct />
+                        <CreateProduct onClick={() => setIsModalProductOpen(true)} />
                     </Grid>
 
                     {produtosFiltrados.map((item, index) => {
@@ -83,6 +85,12 @@ const Cardapio = () => {
                 open={isModalDeleteOpen}
                 onClose={() => setIsModalDeleteOpen(false)}
                 onDelete={() => requisicao()}
+            />
+
+            <ModalProduct
+                id={activeId}
+                open={isModalProductOpen}
+                onClose={() => setIsModalProductOpen(false)}
             />
         </>
     );
