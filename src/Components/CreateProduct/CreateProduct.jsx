@@ -2,9 +2,10 @@ import React from "react";
 import CreateNewFolderOutlinedIcon from "@mui/icons-material/CreateNewFolderOutlined";
 import { Paper, Typography } from "@mui/material";
 
-const CreateProduct = () => {
+const CreateProduct = ({onClick}) => {
     return (
         <Paper
+            onClick={onClick}
             elevation={3}
             sx={{
                 width: "180px",
