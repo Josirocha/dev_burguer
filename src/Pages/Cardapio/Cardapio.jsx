@@ -4,10 +4,13 @@ import CardCardapio from "../../Components/CardCardapio/CardCardapio";
 import { getProdutos } from "../../services/api.js";
 import Search from "../../Components/Search/Search";
 import CreateProduct from "../../Components/CreateProduct/CreateProduct";
+import ModalDelete from "../../Components/ModalDelete/ModalDelete";
 
 const Cardapio = () => {
     const [produtos, setProdutos] = useState([]);
     const [produtosFiltrados, setProdutosFiltrados] = useState([]);
+    const [isModalDeleteOpen, setIsModalDeleteOpen] = useState(false);
+    const [activeId, setActiveId] = useState();
 
     async function requisicao() {
         const response = await getProdutos();
@@ -27,45 +30,61 @@ const Cardapio = () => {
         setProdutosFiltrados(itemsFiltrados);
     }
 
+    function handleProductDelete(id) {
+        setActiveId(id);
+        setIsModalDeleteOpen(true);
+    }
+
     return (
-        <Box
-            sx={{
-                py: 2,
-                gap: 3,
-                padding: "120px 16px",
-                display: "flex",
-                flexDirection: "column",
-            }}
-        >
+        <>
             <Box
                 sx={{
-                    display: "flex",
-                    flexWrap: "wrap",
+                    py: 2,
                     gap: 3,
-                    justifyContent: "center",
+                    padding: "120px 16px",
+                    display: "flex",
+                    flexDirection: "column",
                 }}
             >
-                <Grid container justifyContent="center" gap="15px">
-                    <Grid xs={12} md={6} item>
-                        <Search onChange={handleSearch} />
+                <Box
+                    sx={{
+                        display: "flex",
+                        flexWrap: "wrap",
+                        gap: 3,
+                        justifyContent: "center",
+                    }}
+                >
+                    <Grid container justifyContent="center" gap="15px">
+                        <Grid xs={12} md={6} item>
+                            <Search onChange={handleSearch} />
+                        </Grid>
+
+                        <CreateProduct />
                     </Grid>
 
-                    <CreateProduct />
-                </Grid>
-
-                {produtosFiltrados.map((item, index) => {
-                    return (
-                        <CardCardapio
-                            key={index}
-                            img={item.url}
-                            name={item.nome}
-                            ingredientes={item.ingredientes}
-                            valor={item.preço}
-                        />
-                    );
-                })}
+                    {produtosFiltrados.map((item, index) => {
+                        return (
+                            <CardCardapio
+                                key={index}
+                                id={item._id}
+                                img={item.url}
+                                name={item.nome}
+                                ingredientes={item.ingredientes}
+                                valor={item.preço}
+                                onDeleteClick={handleProductDelete}
+                            />
+                        );
+                    })}
+                </Box>
             </Box>
-        </Box>
+
+            <ModalDelete
+                id={activeId}
+                open={isModalDeleteOpen}
+                onClose={() => setIsModalDeleteOpen(false)}
+                onDelete={() => requisicao()}
+            />
+        </>
     );
 };
 
