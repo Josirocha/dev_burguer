@@ -13,3 +13,12 @@ export const deleteProduto = async (id) => {
     const response = await api.delete(`/produtos/${id}`)
     return response.data;
 }
+
+export const postProdutos = async (data) => {
+    const response = await api.post("/produtos", data);
+    return response.data;
+};
+
+export const atualizaProdutos = async (id, dados) => {
+    await api.patch(`/produtos/${id}`, dados)
+}

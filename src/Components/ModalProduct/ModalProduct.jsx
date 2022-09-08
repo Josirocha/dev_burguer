@@ -9,21 +9,59 @@ import {
     Box,
 } from "@mui/material";
 import React, { useState } from "react";
+import { useEffect } from "react";
+import { toast } from "react-toastify";
+import { atualizaProdutos, postProdutos } from "../../services/api";
 
-const ModalProduct = ({ open, onClose, values, id }) => {
-    const [nome, setNome] = useState(values?.nome);
-    const [ingredientes, setIngredientes] = useState(values?.ingredientes);
-    const [url, setUrl] = useState(values?.url);
-    const [preço, setPreço] = useState(values?.preço);
+const ModalProduct = ({ open, onClose, onSuccess, values, id }) => {
+    const [nome, setNome] = useState('');
+    const [ingredientes, setIngredientes] = useState('');
+    const [url, setUrl] = useState('');
+    const [preço, setPreço] = useState('');
 
     function handleSubmit() {
-        const result = saveCategory();
-        onClose(result);
+        if (values) saveProduct();
+        else createProduct();
     }
 
-    function saveCategory() {
-        console.log("asdfghj");
+    async function saveProduct() {
+        try {
+            toast.success("produto atualizado com sucesso");
+            await atualizaProdutos(id, {
+                nome,
+                ingredientes,
+                url,
+                preço,
+            });
+            onSuccess();
+            onClose();
+        } catch (error) {
+            toast.error("deu ruim");
+        }
     }
+
+    async function createProduct() {
+        try {
+            toast.success("produto criado com sucesso");
+            await postProdutos({
+                nome,
+                ingredientes,
+                url,
+                preço,
+            });
+            onSuccess();
+            onClose();
+        } catch (error) {
+            toast.error("deu ruim");
+        }
+    }
+
+    useEffect(() => {
+        setNome(values?.name);
+        setIngredientes(values?.ingredientes);
+        setUrl(values?.img);
+        setPreço(values?.valor);
+    }, [values]);
 
     return (
         <Modal
@@ -51,7 +89,7 @@ const ModalProduct = ({ open, onClose, values, id }) => {
                         component="div"
                         mb={3}
                     >
-                    {values ? "Atualizar Produto" : "Cadastrar Produto"}
+                        {values ? "Atualizar Produto" : "Cadastrar Produto"}
                     </Typography>
                     <Box
                         sx={{

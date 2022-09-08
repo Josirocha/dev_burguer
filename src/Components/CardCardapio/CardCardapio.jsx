@@ -10,7 +10,19 @@ import CreateOutlinedIcon from "@mui/icons-material/CreateOutlined";
 import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
 import React from "react";
 
-const CardCardapio = ({ img, name, ingredientes, valor, onDeleteClick, id }) => {
+const CardCardapio = ({
+    img,
+    name,
+    ingredientes,
+    valor,
+    onDeleteClick,
+    onEditClick,
+    id,
+}) => {
+    function handleEditClick() {
+        onEditClick({ img, name, ingredientes, valor, id });
+    }
+    
     return (
         <Card
             sx={{
@@ -36,7 +48,12 @@ const CardCardapio = ({ img, name, ingredientes, valor, onDeleteClick, id }) => 
             <CardActions
                 sx={{ display: "flex", justifyContent: "space-between" }}
             >
-                <Button startIcon={<CreateOutlinedIcon />}>Editar</Button>
+                <Button
+                    startIcon={<CreateOutlinedIcon />}
+                    onClick={handleEditClick}
+                >
+                    Editar
+                </Button>
                 <Button
                     onClick={() => onDeleteClick(id)}
                     startIcon={<DeleteOutlineOutlinedIcon />}
