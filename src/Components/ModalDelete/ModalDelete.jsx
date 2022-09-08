@@ -17,7 +17,6 @@ const ModalDelete = ({ open, onClose, id, onDelete }) => {
     }
 
     async function deleteCategory() {
-        console.log(id);
         try {
             await deleteProduto('id');
             onDelete();
