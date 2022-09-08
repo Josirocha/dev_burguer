@@ -1,8 +1,10 @@
-import { Box } from "@mui/material";
+import { Box, Button, Grid } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import CardCardapio from "../../Components/CardCardapio/CardCardapio";
 import { getProdutos } from "../../services/api.js";
 import Search from "../../Components/Search/Search";
+import CreateNewFolderOutlinedIcon from "@mui/icons-material/CreateNewFolderOutlined";
+import CreateProduct from "../../Components/CreateProduct/CreateProduct";
 
 const Cardapio = () => {
     const [produtos, setProdutos] = useState([]);
@@ -21,14 +23,12 @@ const Cardapio = () => {
             sx={{
                 py: 2,
                 gap: 3,
-                padding: "80px 16px",
+                padding: "120px 16px",
                 display: "flex",
                 flexDirection: "column",
             }}
         >
-
             <Box
-                fullWidth
                 sx={{
                     display: "flex",
                     flexWrap: "wrap",
@@ -36,7 +36,14 @@ const Cardapio = () => {
                     justifyContent: "center",
                 }}
             >
-                <Search/>
+                <Grid container justifyContent="center" gap="15px">
+                    <Grid xs={12} md={6} item>
+                        <Search />
+                    </Grid>
+
+                    <CreateProduct />
+
+                </Grid>
 
                 {produtos.map((item, index) => {
                     return (

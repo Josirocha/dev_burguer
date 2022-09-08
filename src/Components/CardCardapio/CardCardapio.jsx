@@ -21,7 +21,7 @@ const CardCardapio = ({ img, name, ingredientes, valor }) => {
             }}
         >
             <div>
-                <CardMedia CardMedia component="img" height="280" image={img} />
+                <CardMedia component="img" height="280" image={img} />
 
                 <CardContent>
                     <Typography gutterBottom variante="h5" component="div">
