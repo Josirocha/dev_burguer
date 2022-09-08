@@ -10,9 +10,13 @@ const Logado = () => {
         localStorage.clear('token')
         navigate('/login')
     }
+
+    function handleCardapio() {
+        navigate('/cardapio')
+    }
     return (
         <>
-            <Button color="secondary">Cardápio</Button>
+            <Button color="secondary" onClick={handleCardapio}>Cardápio</Button>
             <Button color="secondary" onClick={handleLogoff}>Sair</Button>
         </>
 

@@ -8,10 +8,13 @@ const Deslogado = () => {
     function handleLogin() {
         navigate('/login')
     }
+    function handleCadastro(params) {
+        navigate('/cadastro')
+    }
 
     return (
         <>
-            <Button color="secondary">Cadastre-se</Button>
+            <Button color="secondary" onClick={handleCadastro}>Cadastre-se</Button>
             <Button color="secondary" onClick={handleLogin}>Entrar</Button>
         </>
     )
