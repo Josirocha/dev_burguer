@@ -7,6 +7,7 @@ import {
     Button,
 } from "@mui/material";
 import React from "react";
+import { toast } from "react-toastify";
 import { deleteProduto } from "../../services/api";
 
 const ModalDelete = ({ open, onClose, id, onDelete }) => {
@@ -18,10 +19,11 @@ const ModalDelete = ({ open, onClose, id, onDelete }) => {
     async function deleteCategory() {
         console.log(id);
         try {
-            await deleteProduto(id);
+            await deleteProduto('id');
             onDelete();
+            toast.success('Deletado com sucesso')
         } catch (error) {
-            console.log(error);
+            toast.error('não foi possivel deletar o produto, tente novamente mais tarde')
         }
     }
 

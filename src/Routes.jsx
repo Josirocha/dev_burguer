@@ -6,6 +6,8 @@ import Cardapio from "./Pages/Cardapio/Cardapio";
 import SobreNos from "./Pages/SobreNos/SobreNos";
 import Login from "./Pages/Login/Login";
 import Cadastro from "./Pages/Cadastro/Cadastro";
+import {ToastContainer} from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css';
 
 const theme = createTheme({
     palette: {
@@ -38,6 +40,8 @@ const Routes = () => {
                     <Route path="cardapio" exact element={<Cardapio />} />
                 </Switch>
             </BrowserRouter>
+
+            <ToastContainer/>
         </ThemeProvider>
     );
 };
