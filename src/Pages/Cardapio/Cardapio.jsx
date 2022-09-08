@@ -3,20 +3,29 @@ import React, { useState, useEffect } from "react";
 import CardCardapio from "../../Components/CardCardapio/CardCardapio";
 import { getProdutos } from "../../services/api.js";
 import Search from "../../Components/Search/Search";
-import CreateNewFolderOutlinedIcon from "@mui/icons-material/CreateNewFolderOutlined";
 import CreateProduct from "../../Components/CreateProduct/CreateProduct";
 
 const Cardapio = () => {
     const [produtos, setProdutos] = useState([]);
+    const [produtosFiltrados, setProdutosFiltrados] = useState([]);
 
     async function requisicao() {
         const response = await getProdutos();
         setProdutos(response);
+        setProdutosFiltrados(response);
     }
 
     useEffect(() => {
         requisicao();
     }, []);
+
+    function handleSearch(data) {
+        const termo = data.target.value;
+        const itemsFiltrados = produtos.filter((produtos) =>
+            produtos.nome.toLowerCase().includes(termo)
+        );
+        setProdutosFiltrados(itemsFiltrados);
+    }
 
     return (
         <Box
@@ -38,14 +47,13 @@ const Cardapio = () => {
             >
                 <Grid container justifyContent="center" gap="15px">
                     <Grid xs={12} md={6} item>
-                        <Search />
+                        <Search onChange={handleSearch} />
                     </Grid>
 
                     <CreateProduct />
-
                 </Grid>
 
-                {produtos.map((item, index) => {
+                {produtosFiltrados.map((item, index) => {
                     return (
                         <CardCardapio
                             key={index}

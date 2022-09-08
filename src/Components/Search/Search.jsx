@@ -10,10 +10,11 @@ const StyledMuiTextField = styled(TextField)`
     }
 `;
 
-const Search = () => {
+const Search = ({ onChange }) => {
     return (
         <StyledMuiTextField
             fullWidth
+            onChange={onChange}
             color="primary"
             size="small"
             focused
