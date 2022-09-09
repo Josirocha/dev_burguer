@@ -10,18 +10,21 @@ const TextHome = () => {
             <div className={style.container}>
                 <div className={style.containerText}>
                     <p className={style.textPrincipal}>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Reprehenderit explicabo illo in quaerat,
+                        O cardápio tá bugado? Usa o DevBurguer!
                     </p>
                     <p className={style.descrição}>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Quia eum quae quod, eius ad saepe quasi obcaecati
-                        exercitationem error? Culpa rem aut libero fugiat id.
-                        Animi reiciendis eaque omnis porro. Lorem ipsum dolor
-                        sit amet, consectetur adipisicing elit. Veritatis beatae
-                        facilis ullam incidunt minima quam sint aliquam
-                        repudiandae, inventore recusandae. Voluptatem, quasi
-                        sunt! Tenetur nisi officiis, facilis unde officia eos?
+                        Imagine que você faz hambúgueres deliciosos e de tanto
+                        receber elogios sobre suas habilidades culinárias você
+                        resolve abrir um negócio. Porém, a pandemia mudou a
+                        forma como a gente se alimenta, e os aplicativos de
+                        comida que existem por aí aos montes são a prova disso.
+                        Não adianta fazer o melhor hambúguer do mundo se sua
+                        clientela não tiver fácil acesso a ele através da tela
+                        de um computador ou smartphone, não é mesmo? Então,
+                        diante do mar de concorrência batendo à sua porta, você
+                        sente sua batata assar e procura rapidamente algum
+                        software pomposo que te prometeu mundos e fundos para
+                        alavancar suas vendas.
                     </p>
                 </div>
                 <div className={style.containerBg}>
