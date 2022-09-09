@@ -1,0 +1,67 @@
+.footer {
+    background-color: #f2310c;
+    margin-top: 10px;
+
+}
+
+.logoBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.logo {
+    width: 70px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+
+}
+
+.flex {
+    display: flex;
+    justify-content: space-around;
+}
+
+.cepContainer {
+    color: white;
+    justify-content: baseline;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 20px;
+    width: 30%;
+    text-align: center;
+}
+
+.linhaUm {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.linhaDois {
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+.redesContainer {
+    color: white;
+    flex-direction: column;
+    margin-top: 20px;
+
+    width: 15%;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size:18px;
+}
+
+.divImg {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+    padding: 1px;
+}
+.icon{
+    width: 23px;
+    height: 23px;
+}

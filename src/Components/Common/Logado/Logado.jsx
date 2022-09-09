@@ -6,7 +6,7 @@ const Logado = ({ color = "secondary" }) => {
     const navigate = useNavigate();
 
     function handleLogoff() {
-        localStorage.clear("token");
+        localStorage.removeItem("token");
         navigate("/login");
     }
 
@@ -19,6 +19,11 @@ const Logado = ({ color = "secondary" }) => {
                 Cardápio
             </Button>
             <Button color={color} onClick={handleLogoff}>
+
+            <Button color="secondary" onClick={handleCardapio}>
+                Cardápio
+            </Button>
+            <Button color="secondary" onClick={handleLogoff}
                 Sair
             </Button>
         </>

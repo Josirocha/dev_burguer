@@ -1,9 +1,32 @@
-export function validate(){
-        if(!usuario.nome) return setStatus({type: 'error', msg: 'Erro: Necessário preencher o campo nome!'});
-        if(!usuario.email) return setStatus({type: 'error', msg: 'Erro: Necessário preencher o campo e-mail!'});
-        if(!usuario.senha) return setStatus({type: 'error', msg: 'Erro: Necessário preencher o campo senha!'});
-        if(usuario.senha.length < 8) return setStatus({type: 'error', msg: 'Erro: A senha precisa ter pelo menos oito caracteres!'});
-        if(usuario.validaSenha != senha) return setStatus({type: 'error', msg: 'Erro: As senhas não são iguais'}) 
-    
+export const validaCampoVazio = (input) => {
+    if (Object.values(input).includes("")) {
         return true;
-      }
+    } else {
+        return false;
+    }
+};
+
+export const validaEmail = (email) => {
+    const regexEmail = /^[\w+.]+@\w+\.\w{2,}(?:\.\w{2})?$/;
+    if (email.match(regexEmail)) {
+        return true;
+    } else {
+        return false;
+    }
+};
+
+export const validaSenha = (senha) => {
+  if (senha.length >= 8 && senha.length <= 15) {
+    return true
+  } else{
+    return false
+  }
+}
+
+export const validaSenhaIgual = (senha, repeteSenha) => {
+  if (senha === repeteSenha) {
+    return true
+  } else {
+    return false
+  }
+}
