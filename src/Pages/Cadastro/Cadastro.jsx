@@ -13,44 +13,48 @@ import {
 import img from "../../assets/images/cadastro.svg";
 import S from "./Cadastro.module.css";
 import { useState } from "react";
-import {validate} from "../../Utils/validacao"
+import {
+    validaCampoVazio,
+    validaEmail,
+    validaSenha,
+    validaSenhaIgual,
+} from "../../Utils/validacao";
+import { toast } from "react-toastify";
+
 
 function Cadastro() {
-    const [usuario, setUsuario]= useState({
-        nome:'',
-        cpf: '',
-        senha:'',
-        email:'',
-        validaSenha: ''
-    })
-
-    const[status, setStatus] = useState({
-        type:'',
-        msg: ''
+    const [usuario, setUsuario] = useState({
+        nome: "",
+        cpf: "",
+        cep: "",
+        telefone: "",
+        email: "",
+        senha: "",
+        confirmaSenha: "",
     });
 
-    const valueInput = e=>{
-        setUsuario({...usuario, [e.target.nome]: [e.target.value] })
-    }
-    const addUser = async e => {
-        e.preventDefault();
-    
-        if(validate() != true) return;
-    
-        const saveDataForm = true;
+    const [status, setStatus] = useState({
+        type: "",
+        msg: "",
+    });
 
-        if (saveDataForm) {
-          setStatus({
-            type: 'success',
-            msg: "Usuário cadastrado com sucesso!"
-          });
+    const valueInput = (target, key) => {
+        setUsuario({ ...usuario, [key]: target.value });
+    };
+    const addUser = async (e) => {
+        e.preventDefault();
+        console.log(usuario);
+        if (
+            !validaCampoVazio(usuario) &&
+            validaEmail(usuario.email) &&
+            validaSenha(usuario.senha) &&
+            validaSenhaIgual(usuario.senha, usuario.confirmaSenha)
+        ) {
+            toast.success("usuário cadastrado com sucesso");
         } else {
-          setStatus({
-            type: 'error',
-            msg: "Erro: Usuário não cadastrado com sucesso!"
-          });
+            toast.error("usuário não cadastrado");
         }
-      }
+    };
     return (
         <div className={S.container}>
             <div className={S.form}>
@@ -64,9 +68,7 @@ function Cadastro() {
                         display: "flex",
                         flexDirection: "column",
                     }}
-                    >
-                    {status.type === 'success' ?<p style={{ color: "green" }}>{status.msg}</p> : ""}
-                    {status.type === 'error' ?<p style={{ color: "red" }}>{status.msg}</p> : ""}
+                >
                     <CardContent
                         onSubmit={addUser}
                         sx={{
@@ -84,7 +86,9 @@ function Cadastro() {
                             type="text"
                             fullWidth
                             margin="normal"
-                            onSubmit={valueInput}
+                            onChange={({ target }) =>
+                                valueInput(target, "nome")
+                            }
                         />
                         <TextField
                             id="cpf"
@@ -93,7 +97,7 @@ function Cadastro() {
                             type="text"
                             fullWidth
                             margin="normal"
-                            
+                            onChange={({ target }) => valueInput(target, "cpf")}
                         />
                         <TextField
                             id="cep"
@@ -102,6 +106,7 @@ function Cadastro() {
                             type="text"
                             fullWidth
                             margin="normal"
+                            onChange={({ target }) => valueInput(target, "cep")}
                         />
                         <TextField
                             id="tel"
@@ -110,6 +115,9 @@ function Cadastro() {
                             type="text"
                             fullWidth
                             margin="normal"
+                            onChange={({ target }) =>
+                                valueInput(target, "telefone")
+                            }
                         />
                         <TextField
                             id="email"
@@ -118,7 +126,9 @@ function Cadastro() {
                             type="text"
                             fullWidth
                             margin="normal"
-                            onSubmit={valueInput}
+                            onChange={({ target }) =>
+                                valueInput(target, "email")
+                            }
                         />
                         <TextField
                             id="senha"
@@ -128,7 +138,9 @@ function Cadastro() {
                             fullWidth
                             margin="normal"
                             placeholder="Digite uma senha entre 8 e 15 caracteres"
-                            onSubmit={valueInput}
+                            onChange={({ target }) =>
+                                valueInput(target, "senha")
+                            }
                         />
                         <TextField
                             id="validaSenha"
@@ -137,6 +149,9 @@ function Cadastro() {
                             type="password"
                             fullWidth
                             margin="normal"
+                            onChange={({ target }) =>
+                                valueInput(target, "confirmaSenha")
+                            }
                         />
                         <CardActions>
                             <FormControl>
@@ -150,13 +165,19 @@ function Cadastro() {
                                     />
                                 </RadioGroup>
                             </FormControl>
-                            <Button variant="contained" type="submit" onClick={validate}>Cadastrar</Button>
+                            <Button
+                                variant="contained"
+                                type="submit"
+                                onClick={addUser}
+                            >
+                                Cadastrar
+                            </Button>
                         </CardActions>
                     </CardContent>
                 </Card>
             </div>
             <div className={S.svg}>
-                <img src={img} alt="" />
+                <img src={img} />
             </div>
         </div>
     );
