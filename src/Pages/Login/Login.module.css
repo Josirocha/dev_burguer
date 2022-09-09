@@ -26,4 +26,12 @@
         margin-top: 60px;
         width: 100%;
     }
+    .containerBg {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    img {
+        width: 300px;
+    }
 }
