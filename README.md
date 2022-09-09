@@ -1,4 +1,6 @@
+<p align="center">
 <img src="./src/assets/images/dev_burguers_capa.gif" alt="dev burguer gif" width="500"/>
+</p>
 
 ### Olá, pessoa! Seja bem-vinda ao repositório do nosso projeto de final de módulo 5 do curso de Desenvolvimento Web Full Stack da Resilia Educação!
 
