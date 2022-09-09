@@ -34,7 +34,17 @@ const Login = () => {
         const users = localStorage.getItem("cadastro");
         const usersJson = JSON.parse(users);
         console.log(dadosLogin);
-        if (
+        if (!usersJson) {
+            toast.error("Email não cadastrado", {
+                position: "top-center",
+                autoClose: 1300,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+        } else if (
             usersJson.email === dadosLogin.email &&
             usersJson.senha === dadosLogin.password
         ) {
