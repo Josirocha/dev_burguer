@@ -1,11 +1,14 @@
-import React from "react";
+import React,{useState} from "react";
 import { BrowserRouter, Routes as Switch, Route } from "react-router-dom";
 import Header from "./Components/Common/Header/Header";
 import { createTheme, ThemeProvider } from "@mui/material";
+import Loader from './Components/Loader/Loader'
+import Home from "./Pages/Home/Home";
 import Cardapio from "./Pages/Cardapio/Cardapio";
 import SobreNos from "./Pages/SobreNos/SobreNos";
 import Login from "./Pages/Login/Login";
 import Cadastro from "./Pages/Cadastro/Cadastro";
+import { useEffect } from "react";
 import {ToastContainer} from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -24,25 +27,40 @@ const theme = createTheme({
 });
 
 const Routes = () => {
+    const [isLoading, setIsLoading] = useState(true);
+    useEffect(() => {
+        setTimeout(() => {
+            setIsLoading(false);
+        }, 4000);
+    });
     return (
-        <ThemeProvider theme={theme}>
-            <BrowserRouter>
-                <Header />
-                <Switch>
-                    {/* home */}
-                    <Route />
-                    <Route path="sobre" exact element={<SobreNos />} />
-                    {/* login */}
-                    <Route path="login" exact element={<Login />} />
-                    {/* cadastro */}
-                    <Route path="cadastro" exact element={<Cadastro />} />
-                    {/* cardapio */}
-                    <Route path="cardapio" exact element={<Cardapio />} />
-                </Switch>
-            </BrowserRouter>
-
-            <ToastContainer/>
-        </ThemeProvider>
+        <div>
+            {isLoading == true ? (
+                <Loader />
+            ) : (
+                <ThemeProvider theme={theme}>
+                    <BrowserRouter>
+                        <Header />
+                        <Switch>
+                            <Route path="" exact element={<Home />} />
+                            <Route path="sobre" exact element={<SobreNos />} />
+                            <Route path="login" exact element={<Login />} />
+                            <Route
+                                path="cadastro"
+                                exact
+                                element={<Cadastro />}
+                            />
+                            <Route
+                                path="cardapio"
+                                exact
+                                element={<Cardapio />}
+                            />
+                        </Switch>
+                    </BrowserRouter>
+                    <ToastContainer/>
+                </ThemeProvider>
+            )}
+        </div>
     );
 };
 
