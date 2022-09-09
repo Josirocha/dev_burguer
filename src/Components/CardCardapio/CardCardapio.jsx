@@ -36,12 +36,12 @@ const CardCardapio = ({
                 <CardMedia component="img" height="280" image={img} />
 
                 <CardContent>
-                    <Typography gutterBottom variante="h5" component="div">
+                    <Typography marginBottom={3} fontWeight={800} gutterBottom variante="h5" component="div">
                         {name}
                     </Typography>
 
-                    <Typography variant="body2">{ingredientes}</Typography>
-                    <Typography variant="p">{valor}</Typography>
+                    <Typography marginBottom={2} variant="body2">{ingredientes}</Typography>
+                    <Typography   variant="p">{valor}</Typography>
                 </CardContent>
             </div>
 
