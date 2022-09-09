@@ -1,0 +1,40 @@
+.container {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 50px;
+    margin-left: 65px;
+    width: 100%;
+}
+
+.containerText {
+    margin-top: 110px;
+    width: 50%;
+}
+
+.textPrincipal {
+    font-size: 30px;
+}
+
+.descrição {
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+.containerBg {
+    width: 50%;
+    margin-left: 150px;
+    margin-top: 40px;
+}
+
+.imagem {
+    width: 70%;
+}
+
+.containerButtons {
+    margin-left: 65px;
+}
+
+a {
+    text-decoration: none;
+}
+
