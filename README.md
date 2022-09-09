@@ -6,7 +6,7 @@ Olá, pessoa! Seja bem-vinda ao repositório do nosso projeto de final de módul
 * utilizando o README.md do repositório para documentação do projeto;
 * utilizando a biblioteca react-router-dom para roteamento das páginas;
 * utilizando CSS Grid no layout de pelo menos uma página;
-* contendo uma animação CSS para carregamento inicial do site(sem biblioteca).
+* contendo uma animação CSS para carregamento inicial do site (sem biblioteca).
 
 **O site também deveria ter as funcionalidades básicas do CRUD:**
 * Página para listar os cadastros com opção de busca;
@@ -14,7 +14,8 @@ Olá, pessoa! Seja bem-vinda ao repositório do nosso projeto de final de módul
 * Página para editar os cadastros;
 * Opção de excluir itens cadastrados.
 
-### 📦 Packages <a id="packages"></a>
+## 📦 Packages <a id="packages"></a>
+---
  Foi usado na construção do projeto:
  
   - [Axios](https://axios-http.com/) - v. 0.27.2
@@ -25,6 +26,7 @@ Olá, pessoa! Seja bem-vinda ao repositório do nosso projeto de final de módul
   - [React](https://reactjs.org/) - v. 18.2.0
 
  ## 🛠️ Instalação <a id="instalacao"></a>
+ ---
 Abra o terminal e  execute os comandos a seguir:
 
 1. para clonar o projeto:
@@ -43,9 +45,13 @@ npm install
 ```
 npm run dev
 ```
-## 🛣️ Endpoints utilizados
+## 🛣️ Endpoints utilizados <a id="rotas"></a>
 ---
-
+* Rota `'/'`
+* Rota `'/sobre'`
+* Rota `'/cardapio'`
+* Rota `'/login'`
+* Rota `'/cadastro'`
 
 ## 💻 Time de desenvolvimento <a id="time"></a>
 ---
