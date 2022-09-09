@@ -1,27 +1,10 @@
-import { AppBar, Toolbar, Button, Avatar } from "@mui/material";
+import { AppBar, Toolbar, Avatar } from "@mui/material";
 import Burger from "../../../assets/images/burger.png";
-import React, { useEffect, useState } from "react";
 import { Box } from "@mui/system";
-import Logado from "../Logado/Logado";
-import Deslogado from "../Deslogado/Deslogado";
-import { useLocation, useNavigate } from "react-router-dom";
+import MobileMenuOption from "../MobileMenuOption/MobileMenuOption";
+import MenuOptions from "../MenuOptions/MenuOptions";
 
 const Header = () => {
-    const [token, setToken] = useState();
-    const location = useLocation();
-    const navigate = useNavigate();
-    
-    useEffect(() => {
-        setToken(localStorage.getItem("token"));
-    }, [location]);
-
-    function handleHome() {
-        navigate("/");
-    }
-    function handleSobre() {
-        navigate("/sobre");
-    }
-
     return (
         <AppBar>
             <Toolbar>
@@ -45,18 +28,21 @@ const Header = () => {
                 </Box>
                 <Box
                     sx={{
-                        display: "flex",
                         justifyContent: "flex-end",
                         width: "100%",
+                        display: { xs: "none", md: "flex" },
                     }}
                 >
-                    <Button color="secondary" onClick={handleHome}>
-                        Home
-                    </Button>
-                    <Button color="secondary" onClick={handleSobre}>
-                        Sobre nós
-                    </Button>
-                    {token ? <Logado /> : <Deslogado />}
+                    <MenuOptions color="secondary" />
+                </Box>
+                <Box
+                    sx={{
+                        justifyContent: "flex-end",
+                        width: "100%",
+                        display: { xs: "flex", md: "none" },
+                    }}
+                >
+                    <MobileMenuOption />
                 </Box>
             </Toolbar>
         </AppBar>

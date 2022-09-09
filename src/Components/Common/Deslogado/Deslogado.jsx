@@ -2,20 +2,20 @@ import React from 'react'
 import { Button } from "@mui/material";
 import { useNavigate } from 'react-router-dom';
 
-const Deslogado = () => {
+const Deslogado = ({color}) => {
     const navigate = useNavigate()
 
     function handleLogin() {
         navigate('/login')
     }
-    function handleCadastro(params) {
+    function handleCadastro() {
         navigate('/cadastro')
     }
 
     return (
         <>
-            <Button color="secondary" onClick={handleCadastro}>Cadastre-se</Button>
-            <Button color="secondary" onClick={handleLogin}>Entrar</Button>
+            <Button color={color} onClick={handleCadastro}>Cadastre-se</Button>
+            <Button color={color} onClick={handleLogin}>Entrar</Button>
         </>
     )
 }
