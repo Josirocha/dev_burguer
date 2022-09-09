@@ -11,12 +11,15 @@ import S from "./Login.module.css";
 import bg from "../../assets/images/hamburguerLogin.png";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Login = () => {
     const [dadosLogin, setDadosLogin] = useState({
         email: "",
         password: "",
     });
+
+    const navigate = useNavigate();
 
     const handleChange = (e, nomeDaChave) => {
         setDadosLogin({
@@ -28,17 +31,31 @@ const Login = () => {
 
     const handleClick = (e) => {
         e.preventDefault();
-        // const users = localStorage.getItem("users");
-        // const usersJson = JSON.parse(users);
-        // console.log(usersJson);
+        const users = localStorage.getItem("cadastro");
+        const usersJson = JSON.parse(users);
         console.log(dadosLogin);
+        if (
+            usersJson.email === dadosLogin.email &&
+            usersJson.senha === dadosLogin.password
+        ) {
+            localStorage.setItem("token", "true");
+            navigate("/");
+        } else {
+            toast.error("Usuário ou senha inválidos!", {
+                position: "top-center",
+                autoClose: 1300,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+        }
     };
 
     useEffect(() => {
         localStorage.removeItem("token");
     }, []);
-
-    const navigate = useNavigate();
 
     return (
         <div className={S.container}>
