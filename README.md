@@ -20,9 +20,9 @@ Olá, pessoa! Seja bem-vinda ao repositório do nosso projeto de final de módul
  
   - [Axios](https://axios-http.com/) - v. 0.27.2
   - [Material UI](https://mui.com/material-ui/getting-started/overview/) - v. 5.10.4
-  - [React Router](https://reactrouter.com/en/main) - v. 6.3.0
+  - [React Router Dom](https://reactrouter.com/en/main) - v. 6.3.0
   - [React Toastify](https://www.npmjs.com/package/react-toastify) - v. 9.0.8
-  - [Node.js](https://nodejs.org/pt-br/)
+  - [Node.js](https://nodejs.org/pt-br/) - v. 16.15.1
   - [React](https://reactjs.org/) - v. 18.2.0
 
  ## 🛠️ Instalação <a id="instalacao"></a>
@@ -55,23 +55,8 @@ npm run dev
 
 ## 💻 Time de desenvolvimento <a id="time"></a>
 ---
-<div align="center"><img width="100" src="https://avatars.githubusercontent.com/u/86576674?s=96&v=4">
-
-🌮**Alonso Estevam**
-<p align="center"> <a href="https://github.com/alonso-estevam" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/alonso-estevam" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white"/></a></div>
-
-<div align="center"><img width="100" src="https://avatars.githubusercontent.com/u/102330429?v=4">
-
-🍟 **Jiulie Vitória**
-<p align="center"> <a href="https://github.com/JiulieVitoria" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/jiulie-vitoria/" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white"/></a></div>
-
-
-<div align="center" ><img width="100" src="https://avatars.githubusercontent.com/u/102763035?v=4">
-
-🥪 **Josiane Rocha**
-<p align="center"> <a href="https://github.com/Josirocha" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/josiane-r-s-lima-santos-10202971/" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white"/></a></div>
-
-<div align="center"><img width="100" src="https://avatars.githubusercontent.com/u/101817310?v=4">
-
-🍔 **Willian Carvalho**
-<p align="center"> <a href="https://github.com/willcrvlh" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/willcrvlh" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white"/></a></div>
+| <img width="100" src="https://avatars.githubusercontent.com/u/86576674?s=96&v=4">  | <img width="100" src="https://avatars.githubusercontent.com/u/102330429?v=4"> | <img width="100" src="https://avatars.githubusercontent.com/u/102763035?v=4"> | <img width="100" src="https://avatars.githubusercontent.com/u/101817310?v=4"> |
+| ------------- |:-------------:| | |
+| 🌮**Alonso Estevam**      | 🍟 **Jiulie Vitória**     |🥪 **Josiane Rocha** | 🍔 **Willian Carvalho**|
+| <a href="https://github.com/alonso-estevam" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"/></a>      | <a href="https://github.com/JiulieVitoria" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"/></a>      |<a href="https://github.com/Josirocha" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"/></a>  |<a href="https://github.com/willcrvlh" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"/></a> |
+| <a href="https://www.linkedin.com/in/alonso-estevam" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white"/></a>      | <a href="https://www.linkedin.com/in/jiulie-vitoria/" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white"/></a>    | <a href="https://www.linkedin.com/in/josiane-r-s-lima-santos-10202971/" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white"/></a> | <a href="https://www.linkedin.com/in/willcrvlh" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white"/></a>|
