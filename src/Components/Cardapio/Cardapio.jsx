@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./Cardapio.module.css";
 import hamburguer from "../../assets/images/hamburguer.png";
-import { Button } from "@mui/material";
+import { Stack, Button } from "@mui/material";
 import { Link } from "react-router-dom";
 
 const Cardapio = () => {
@@ -19,11 +19,18 @@ const Cardapio = () => {
                         100% angus e com um tempero que só nós temos!
                     </p>
                     <div className={style.botao}>
-                        <Link to="/Login" style={{ border: "none" }}>
-                            <Button variant="contained">
-                                Acesse nosso cardápio
-                            </Button>
-                        </Link>
+                        <Stack
+                            spacing={2}
+                            direction="row"
+                            className={style.containerButtons}
+                        >
+                            <Link to="/Cardapio" style={{ border: "none" }}>
+                                <Button variant="contained">Acesse nosso cardápio!</Button>
+                            </Link>
+                            <Link to="/Cadastro" style={{ border: "none" }}>
+                                <Button variant="contained">Gerencie seu próprio cardápio!</Button>
+                            </Link>
+                        </Stack>
                     </div>
                 </div>
             </div>
