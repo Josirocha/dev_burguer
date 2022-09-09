@@ -49,6 +49,7 @@ function Cadastro() {
             validaSenha(usuario.senha) &&
             validaSenhaIgual(usuario.senha, usuario.confirmaSenha)
         ) {
+            localStorage.setItem('cadastro', JSON.stringify(usuario))
             toast.success("usuário cadastrado com sucesso");
             navigate('/login')
         } else {
