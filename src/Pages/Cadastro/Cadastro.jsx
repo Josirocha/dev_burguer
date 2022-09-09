@@ -13,7 +13,22 @@ import {
 } from "@mui/material";
 import img from "../../assets/images/cadastro.svg";
 import S from "./Cadastro.module.css";
+import { useState } from "react";
+
+
 function Cadastro() {
+    const [usuario, setUsuario]= useState({
+        nome:'',
+        cpf: '',
+        senha:'',
+        validaSenha: ''
+    })
+
+    const[status, setStatus] = useState({
+        type:'',
+        msg: ''
+    });
+    
     return (
         <div className={S.container}>
             <div className={S.form}>
@@ -53,6 +68,7 @@ function Cadastro() {
                             type="text"
                             fullWidth
                             margin="normal"
+                            
                         />
                         <TextField
                             id="cep"
@@ -85,6 +101,7 @@ function Cadastro() {
                             type="password"
                             fullWidth
                             margin="normal"
+                            placeholder="Digite uma senha entre 8 e 15 caracteres"
                         />
                         <TextField
                             id="validaSenha"
@@ -106,7 +123,7 @@ function Cadastro() {
                                     />
                                 </RadioGroup>
                             </FormControl>
-                            <Button variant="contained">Cadastrar</Button>
+                            <Button variant="contained" onClick={handleCPF}>Cadastrar</Button>
                         </CardActions>
                     </CardContent>
                 </Card>
