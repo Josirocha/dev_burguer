@@ -31,7 +31,7 @@ const Cardapio = () => {
     }, []);
 
     useEffect(() => {
-        if (!isModalDeleteOpen) {
+        if (!isModalProductOpen) {
             setActiveId(undefined);
             setActiveValues(undefined);
         }
@@ -115,7 +115,6 @@ const Cardapio = () => {
                 open={isModalProductOpen}
                 onClose={() => setIsModalProductOpen(false)}
                 onSuccess={() => {
-                    console.log("sdfsdfsdf");
                     requisicao();
                 }}
             />
