@@ -20,9 +20,13 @@ import {
     validaSenhaIgual,
 } from "../../Utils/validacao";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 
 function Cadastro() {
+
+    const navigate = useNavigate()
+
     const [usuario, setUsuario] = useState({
         nome: "",
         cpf: "",
@@ -33,17 +37,12 @@ function Cadastro() {
         confirmaSenha: "",
     });
 
-    const [status, setStatus] = useState({
-        type: "",
-        msg: "",
-    });
 
     const valueInput = (target, key) => {
         setUsuario({ ...usuario, [key]: target.value });
     };
     const addUser = async (e) => {
         e.preventDefault();
-        console.log(usuario);
         if (
             !validaCampoVazio(usuario) &&
             validaEmail(usuario.email) &&
@@ -51,9 +50,12 @@ function Cadastro() {
             validaSenhaIgual(usuario.senha, usuario.confirmaSenha)
         ) {
             toast.success("usuário cadastrado com sucesso");
+            navigate('/login')
         } else {
             toast.error("usuário não cadastrado");
         }
+
+
     };
     return (
         <div className={S.container}>
@@ -169,6 +171,7 @@ function Cadastro() {
                                 variant="contained"
                                 type="submit"
                                 onClick={addUser}
+
                             >
                                 Cadastrar
                             </Button>
