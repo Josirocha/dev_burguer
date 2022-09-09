@@ -1,8 +1,8 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Routes as Switch, Route } from "react-router-dom";
 import Header from "./Components/Common/Header/Header";
 import { createTheme, ThemeProvider } from "@mui/material";
-import Loader from './Components/Loader/Loader'
+import Loader from "./Components/Loader/Loader";
 import Home from "./Pages/Home/Home";
 import Cardapio from "./Pages/Cardapio/Cardapio";
 import SobreNos from "./Pages/SobreNos/SobreNos";
@@ -10,9 +10,8 @@ import Login from "./Pages/Login/Login";
 import Cadastro from "./Pages/Cadastro/Cadastro";
 import { useEffect } from "react";
 import Footer from "./Components/Common/Footer/Footer";
-import {ToastContainer} from "react-toastify"
-import 'react-toastify/dist/ReactToastify.css';
-
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const theme = createTheme({
     palette: {
@@ -43,7 +42,6 @@ const Routes = () => {
                 <ThemeProvider theme={theme}>
                     <BrowserRouter>
                         <Header />
-                        <Footer/>
                         <Switch>
                             <Route path="" exact element={<Home />} />
                             <Route path="sobre" exact element={<SobreNos />} />
@@ -58,9 +56,10 @@ const Routes = () => {
                                 exact
                                 element={<Cardapio />}
                             />
-                        </Switch>                    
+                        </Switch>
+                        <Footer />
                     </BrowserRouter>
-                    <ToastContainer/>
+                    <ToastContainer />
                 </ThemeProvider>
             )}
         </div>
