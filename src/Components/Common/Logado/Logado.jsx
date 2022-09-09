@@ -13,17 +13,13 @@ const Logado = ({ color = "secondary" }) => {
     function handleCardapio() {
         navigate("/cardapio");
     }
+
     return (
         <>
             <Button color={color} onClick={handleCardapio}>
                 Cardápio
             </Button>
             <Button color={color} onClick={handleLogoff}>
-
-            <Button color="secondary" onClick={handleCardapio}>
-                Cardápio
-            </Button>
-            <Button color="secondary" onClick={handleLogoff}
                 Sair
             </Button>
         </>
