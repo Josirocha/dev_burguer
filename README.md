@@ -1,4 +1,6 @@
-Olá, pessoa! Seja bem-vinda ao repositório do nosso projeto de final de módulo 5 do curso de Desenvolvimento Web Full Stack da Resilia Educação!
+<img src="./src/assets/images/dev_burguers_capa.gif" alt="dev burguer gif" width="500"/>
+
+### Olá, pessoa! Seja bem-vinda ao repositório do nosso projeto de final de módulo 5 do curso de Desenvolvimento Web Full Stack da Resilia Educação!
 
 ## 📋 Proposta do projeto
 **Construir, usando a biblioteca React, um site:**
@@ -14,8 +16,10 @@ Olá, pessoa! Seja bem-vinda ao repositório do nosso projeto de final de módul
 * Página para editar os cadastros;
 * Opção de excluir itens cadastrados.
 
-## 📦 Packages <a id="packages"></a>
 ---
+
+## 📦 Packages <a id="packages"></a>
+
  Foi usado na construção do projeto:
  
   - [Axios](https://axios-http.com/) - v. 0.27.2
@@ -25,8 +29,10 @@ Olá, pessoa! Seja bem-vinda ao repositório do nosso projeto de final de módul
   - [Node.js](https://nodejs.org/pt-br/) - v. 16.15.1
   - [React](https://reactjs.org/) - v. 18.2.0
 
+---
+
  ## 🛠️ Instalação <a id="instalacao"></a>
- ---
+ 
 Abra o terminal e  execute os comandos a seguir:
 
 1. para clonar o projeto:
@@ -45,16 +51,21 @@ npm install
 ```
 npm run dev
 ```
-## 🛣️ Endpoints utilizados <a id="rotas"></a>
+
 ---
+
+## 🛣️ Endpoints utilizados <a id="rotas"></a>
+
 * Rota `'/'`
 * Rota `'/sobre'`
 * Rota `'/cardapio'`
 * Rota `'/login'`
 * Rota `'/cadastro'`
 
-## 💻 Time de desenvolvimento <a id="time"></a>
 ---
+
+## 💻 Time de desenvolvimento <a id="time"></a>
+
 | <img width="100" src="https://avatars.githubusercontent.com/u/86576674?s=96&v=4">  | <img width="100" src="https://avatars.githubusercontent.com/u/102330429?v=4"> | <img width="100" src="https://avatars.githubusercontent.com/u/102763035?v=4"> | <img width="100" src="https://avatars.githubusercontent.com/u/101817310?v=4"> |
 | ------------- | ------------- | ------------- | ------------- |
 | 🌮**Alonso Estevam**      | 🍟 **Jiulie Vitória**     |🥪 **Josiane Rocha** | 🍔 **Willian Carvalho**|
