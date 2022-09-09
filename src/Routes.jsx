@@ -9,6 +9,7 @@ import SobreNos from "./Pages/SobreNos/SobreNos";
 import Login from "./Pages/Login/Login";
 import Cadastro from "./Pages/Cadastro/Cadastro";
 import { useEffect } from "react";
+import Footer from "./Components/Common/Footer/Footer";
 
 const theme = createTheme({
     palette: {
@@ -55,6 +56,7 @@ const Routes = () => {
                             />
                         </Switch>
                     </BrowserRouter>
+                    <Footer/>
                 </ThemeProvider>
             )}
         </div>
