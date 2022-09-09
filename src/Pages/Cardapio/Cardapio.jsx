@@ -22,13 +22,20 @@ const Cardapio = () => {
             setProdutos(response);
             setProdutosFiltrados(response);
         } catch (error) {
-            toast.error('Não foi possivel obter a lista de produtos')
+            toast.error("Não foi possivel obter a lista de produtos");
         }
     }
 
     useEffect(() => {
         requisicao();
     }, []);
+
+    useEffect(() => {
+        if (!isModalDeleteOpen) {
+            setActiveId(undefined);
+            setActiveValues(undefined);
+        }
+    }, [isModalProductOpen]);
 
     function handleSearch(data) {
         const termo = data.target.value;
