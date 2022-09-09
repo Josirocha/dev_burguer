@@ -18,7 +18,8 @@ const ModalDelete = ({ open, onClose, id, onDelete }) => {
 
     async function deleteCategory() {
         try {
-            await deleteProduto('id');
+            if(!id) throw new Error()
+            await deleteProduto(id);
             onDelete();
             toast.success('Deletado com sucesso')
         } catch (error) {
