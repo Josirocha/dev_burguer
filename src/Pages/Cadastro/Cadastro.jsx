@@ -8,19 +8,19 @@ import {
     FormControlLabel,
     FormControl,
     Radio,
-    FormLabel,
     RadioGroup,
 } from "@mui/material";
 import img from "../../assets/images/cadastro.svg";
 import S from "./Cadastro.module.css";
 import { useState } from "react";
-
+import {validate} from "../../Utils/validacao"
 
 function Cadastro() {
     const [usuario, setUsuario]= useState({
         nome:'',
         cpf: '',
         senha:'',
+        email:'',
         validaSenha: ''
     })
 
@@ -28,23 +28,47 @@ function Cadastro() {
         type:'',
         msg: ''
     });
+
+    const valueInput = e=>{
+        setUsuario({...usuario, [e.target.nome]: [e.target.value] })
+    }
+    const addUser = async e => {
+        e.preventDefault();
     
+        if(validate() != true) return;
+    
+        const saveDataForm = true;
+
+        if (saveDataForm) {
+          setStatus({
+            type: 'success',
+            msg: "Usuário cadastrado com sucesso!"
+          });
+        } else {
+          setStatus({
+            type: 'error',
+            msg: "Erro: Usuário não cadastrado com sucesso!"
+          });
+        }
+      }
     return (
         <div className={S.container}>
             <div className={S.form}>
                 <Card
                     sx={{
                         width: "350",
-                        height: "80",
                         padding: "10px 16px",
+                        height: "80",
                         margin: "16px",
                         marginTop: "90px",
                         display: "flex",
                         flexDirection: "column",
                     }}
-                >
+                    >
+                    {status.type === 'success' ?<p style={{ color: "green" }}>{status.msg}</p> : ""}
+                    {status.type === 'error' ?<p style={{ color: "red" }}>{status.msg}</p> : ""}
                     <CardContent
-
+                        onSubmit={addUser}
                         sx={{
                             display: "flex",
                             flexDirection: "column",
@@ -60,6 +84,7 @@ function Cadastro() {
                             type="text"
                             fullWidth
                             margin="normal"
+                            onSubmit={valueInput}
                         />
                         <TextField
                             id="cpf"
@@ -93,6 +118,7 @@ function Cadastro() {
                             type="text"
                             fullWidth
                             margin="normal"
+                            onSubmit={valueInput}
                         />
                         <TextField
                             id="senha"
@@ -102,6 +128,7 @@ function Cadastro() {
                             fullWidth
                             margin="normal"
                             placeholder="Digite uma senha entre 8 e 15 caracteres"
+                            onSubmit={valueInput}
                         />
                         <TextField
                             id="validaSenha"
@@ -123,7 +150,7 @@ function Cadastro() {
                                     />
                                 </RadioGroup>
                             </FormControl>
-                            <Button variant="contained" onClick={handleCPF}>Cadastrar</Button>
+                            <Button variant="contained" type="submit" onClick={validate}>Cadastrar</Button>
                         </CardActions>
                     </CardContent>
                 </Card>
