@@ -36,12 +36,15 @@
 }
 
 @media (min-width: 2400px) {
+    .containerText {
+        margin-top: 160px;
+    }
     .textPrincipal {
-        font-size: 60px;
+        font-size: 50px;
     }
 
     .descrição {
-        font-size: 40px;
+        font-size: 35px;
         margin-top: 18px;
     }
 
@@ -49,27 +52,57 @@
         width: 280px;
         font-size: 60px;
     }
+    .containerBg {
+        width: 50%;
+    }
+    
+    .imagem {
+        width: 80%;
+    }
+    
 
 }
-
-@media (min-width: 1900px) {
+@media (max-width: 1900px) {
     .textPrincipal {
         font-size: 45px;
     }
-
+    
     .descrição {
         font-size: 30px;
         margin-top: 18px;
     }
-
+    
     Button {
         width: 280px;
         font-size: 60px;
     }
     
 }
+@media (max-width: 1500px) {
+    .textPrincipal {
+        font-size: 35px;
+    }
+    
+    .descrição {
+        font-size: 20px;
+        margin-top: 18px;
+    }
+    
+    Button {
+        width: 280px;
+        font-size: 60px;
+    }
+    .containerBg {
+        width: 50%;
+    }
+    
+    .imagem {
+        width: 90%;
+    }
+    
+}
 
-@media (min-width: 1023px) {
+@media (max-width: 1100px) {
     .containerBg {
         width: 50%;
         margin-left: 0px;
@@ -82,18 +115,22 @@
     
 }
 
-@media (min-width: 768px) {
-    .containerBg {
-        width: 50%;
-        margin-left: 0px;
-        margin-top: 120px;
+@media (max-width: 800px) {
+    .textPrincipal {
+        text-align: center;
     }
     
+    .descrição {
+        font-size: 20px;
+        margin-top: 18px;
+    }
     .imagem {
-        width: 90%;
+        margin-top: 150px;
+        width: 100%;
     }
     
 }
+
 
 @media (max-width: 600px) {
     .textPrincipal {
@@ -113,5 +150,8 @@
     .imagem {
         width: 0%;
     }
-    
+    Button {
+        width: 100px;
+        font-size: 40px;
+    }
 }
