@@ -55,8 +55,8 @@ const Routes = () => {
                                 element={<Cardapio />}
                             />
                         </Switch>
-                    </BrowserRouter>
                     <Footer/>
+                    </BrowserRouter>
                 </ThemeProvider>
             )}
         </div>
