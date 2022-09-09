@@ -35,7 +35,7 @@ const Login = () => {
     };
 
     useEffect(() => {
-        localStorage.clear("token");
+        localStorage.removeItem("token");
     }, []);
 
     const navigate = useNavigate();
