@@ -31,8 +31,87 @@
 }
 
 .containerButtons {
-    margin-top:20px;
+    margin-top: 20px;
 
 }
 
+@media (min-width: 2400px) {
+    .textPrincipal {
+        font-size: 60px;
+    }
 
+    .descrição {
+        font-size: 40px;
+        margin-top: 18px;
+    }
+
+    Button {
+        width: 280px;
+        font-size: 60px;
+    }
+
+}
+
+@media (min-width: 1900px) {
+    .textPrincipal {
+        font-size: 45px;
+    }
+
+    .descrição {
+        font-size: 30px;
+        margin-top: 18px;
+    }
+
+    Button {
+        width: 280px;
+        font-size: 60px;
+    }
+    
+}
+
+@media (min-width: 1023px) {
+    .containerBg {
+        width: 50%;
+        margin-left: 0px;
+        margin-top: 50px;
+    }
+    
+    .imagem {
+        width: 100%;
+    }
+    
+}
+
+@media (min-width: 768px) {
+    .containerBg {
+        width: 50%;
+        margin-left: 0px;
+        margin-top: 120px;
+    }
+    
+    .imagem {
+        width: 90%;
+    }
+    
+}
+
+@media (max-width: 600px) {
+    .textPrincipal {
+        font-size: 30px;
+    }
+
+    .descrição {
+        font-size: 20px;
+        margin-top: 18px;
+    }
+
+    .containerBg {
+        width: 0%;
+
+    }
+    
+    .imagem {
+        width: 0%;
+    }
+    
+}
