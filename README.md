@@ -4,6 +4,9 @@
 
 ### Olá, pessoa! Seja bem-vinda ao repositório do nosso projeto de final de módulo 5 do curso de Desenvolvimento Web Full Stack da Resilia Educação!
 
+## 📑Build da Aplicação no Vercel
+[Dev Burguer](https://dev-burguer.vercel.app/)
+
 ## 📋 Proposta do projeto
 
 **Construir, usando a biblioteca React, um site:**
@@ -21,6 +24,7 @@
 -   Página para editar os cadastros;
 -   Opção de excluir itens cadastrados.
 
+
 ## 📦 Packages <a id="packages"></a>
 
  Foi usado na construção do projeto:
@@ -36,7 +40,11 @@
 
  ## 🛠️ Instalação <a id="instalacao"></a>
  
-Abra o terminal e  execute os comandos a seguir:
+ Para instalar o projeto, certifique-se de ter estes pré-requisitos:
+ - Node.Js v16.17.0
+ - NPM v8.15.0
+ 
+Em seguida, abra o terminal e  execute os comandos:
 
 1. para clonar o projeto:
 
@@ -66,11 +74,11 @@ npm run dev
 
 ---
 
--   Rota `'/'`
--   Rota `'/sobre'`
--   Rota `'/cardapio'`
--   Rota `'/login'`
--   Rota `'/cadastro'`
+-   Rota `'/'` -> Nesse endpoint temos todas as informações sobre a Dev Burguer.
+-   Rota `'/sobre'` -> Aqui temos informações sobre os desenvolvedores do projeto.
+-   Rota `'/cardapio'` -> Nesse endpoint estão as operações do CRUD, onde você poderá adicionar, deletar, atualizar e pesquisar produtos no cardápio. No header, ele só vai aparecer quando o usuário estiver logado.
+-   Rota `'/login'` -> Página destinada ao login do usuário. É preciso inserir email e senha (que devem estar previamente cadastrados). O login pega as informações que foram salvas no localStorage através do cadastro. Observação: o mock foi feito porque não tínhamos a entidade cadastro e login na API.
+-   Rota `'/cadastro'` -> Página para o registro de usuário. As informações são salvas no localStorage.
 
 
 ## 💻 Time de desenvolvimento <a id="time"></a>
